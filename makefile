@@ -21,7 +21,7 @@ $(BUILDDIR)/%.o : $(SRCDIR)/%.c
 
 windows: directories $(BINDIR)/SplittingSquares.exe
 
-$(BINDIR)/out.exe: $(OBJECTS)
+$(BINDIR)/SplittingSquares.exe: $(OBJECTS)
 	$(CC) -o $@ $^ -lSDL2 -lm -lSDL2_ttf
 
 linux: directories $(BINDIR)/SplittingSquares-linux
