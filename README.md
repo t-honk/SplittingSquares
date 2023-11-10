@@ -51,7 +51,7 @@ Program Behavior can be modified using the consts in the top of "main.c" (explai
 - SCREEN_WIDTH
 - SCREEN_HEIGHT
 - MAX_SQUARES
-  - Default: 40,000 | Currently crashes after this is exceeded [(TODO)](#TODO)
+  - Default: 40,000 | Program exits, prints that MAX_SQUARES was reached ~~Currently crashes after this is exceeded [(TODO)](#TODO)~~
 - FPS
   - Default: 144 | FPS Limit, delays main SDL event loop (will affect square speed)
 - ANGLE_INCREMENT
@@ -62,7 +62,10 @@ Program Behavior can be modified using the consts in the top of "main.c" (explai
   - Default: 1.1 | What percentage speed increase each new square(s) should get (1.1 = 10%)
 
 ## TODO
-- Implement error checking for square count to prevent crash
+- [ ] Unchecked
+- [x] Checked
+- [ ] test
+- ~~Implement error checking for square count to prevent crash~~ - **X**
 
 - MAYBE: 
   - Add UI elements for config (sliders?)
