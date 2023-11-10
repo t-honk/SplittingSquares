@@ -16,6 +16,7 @@ const int FPS = 144;
 const float ANGLE_INCREMENT = 10.0f;
 const float SHRINK_MODIFIER = 0.65f;
 const float SPEED_MULTIPLIER = 1.01f;
+const float SPAWN_RADIUS = 50.0f;
 
 typedef struct
 {
@@ -173,11 +174,10 @@ SDL_Texture *renderText(SDL_Renderer *renderer, TTF_Font *font, const char *text
 
 void collisionHandler(Square *squares, int i, int *squareCount, float *angle)
 {
-    float fixedRadius = 100.0f;
     squares[i].rect.w = (squares[i].rect.w * SHRINK_MODIFIER);
     squares[i].rect.h = (squares[i].rect.h * SHRINK_MODIFIER);
-    squares[i].rect.x = SCREEN_WIDTH / 2 + cos(*angle * M_PI / 180.0f) * fixedRadius;
-    squares[i].rect.y = SCREEN_HEIGHT / 2 + sin(*angle * M_PI / 180.0f) * fixedRadius;
+    squares[i].rect.x = SCREEN_WIDTH / 2 + cos(*angle * M_PI / 180.0f) * SPAWN_RADIUS;
+    squares[i].rect.y = SCREEN_HEIGHT / 2 + sin(*angle * M_PI / 180.0f) * SPAWN_RADIUS;
     float randomOffset = (rand() % 11) - 5;
     float spiralAngle = *angle + randomOffset;
     squares[i].speed *= SPEED_MULTIPLIER;
@@ -189,8 +189,8 @@ void collisionHandler(Square *squares, int i, int *squareCount, float *angle)
 
     squares[*squareCount] = squares[i];
 
-    squares[*squareCount].rect.x = SCREEN_WIDTH / 2 + cos(*angle * M_PI / 180.0f) * fixedRadius;
-    squares[*squareCount].rect.y = SCREEN_HEIGHT / 2 + sin(*angle * M_PI / 180.0f) * fixedRadius;
+    squares[*squareCount].rect.x = SCREEN_WIDTH / 2 + cos(*angle * M_PI / 180.0f) * SPAWN_RADIUS;
+    squares[*squareCount].rect.y = SCREEN_HEIGHT / 2 + sin(*angle * M_PI / 180.0f) * SPAWN_RADIUS;
     squares[*squareCount].dx = (cos(spiralAngle * M_PI / 180.0f)) * squares[i].speed;
     squares[*squareCount].dy = (sin(spiralAngle * M_PI / 180.0f)) * squares[i].speed;
     *angle += ANGLE_INCREMENT;

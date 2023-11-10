@@ -66,6 +66,8 @@ Program Behavior can be modified using the constants in the top of "main.c" (exp
   - Default: 0.6 | How large the resulting squares should be after collision
 - SPEED_MULTIPLIER
   - Default: 1.1 | What percentage speed increase each new square(s) should get (1.1 = 10%)
+- SPAWN_RADIUS
+  - Default 50 | The radius of the circle that new squares "spawn" in (centered on the window)
 
 ## TODO
 
