@@ -19,12 +19,12 @@ directories:
 $(BUILDDIR)/%.o : $(SRCDIR)/%.c
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-windows: directories $(BINDIR)/out.exe
+windows: directories $(BINDIR)/SplittingSquares.exe
 
 $(BINDIR)/out.exe: $(OBJECTS)
 	$(CC) -o $@ $^ -lSDL2 -lm -lSDL2_ttf
 
-linux: directories $(BINDIR)/out-linux
+linux: directories $(BINDIR)/SplittingSquares-linux
 
 $(BINDIR)/out-linux: $(OBJECTS)
 	$(CC) -o $@ $^ -lSDL2 -lm
