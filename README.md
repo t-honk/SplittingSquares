@@ -62,10 +62,8 @@ Program Behavior can be modified using the consts in the top of "main.c" (explai
   - Default: 1.1 | What percentage speed increase each new square(s) should get (1.1 = 10%)
 
 ## TODO
-- [ ] Unchecked
-- [x] Checked
-- [ ] test
-- ~~Implement error checking for square count to prevent crash~~ - **X**
+
+- [x] ~~Implement error checking for square count to prevent crash~~
 
 - MAYBE: 
   - Add UI elements for config (sliders?)
