@@ -22,7 +22,7 @@ $(BUILDDIR)/%.o : $(SRCDIR)/%.c
 windows: directories $(BINDIR)/out.exe
 
 $(BINDIR)/out.exe: $(OBJECTS)
-	$(CC) -o $@ $^ -lSDL2 -lm
+	$(CC) -o $@ $^ -lSDL2 -lm -lSDL2_ttf
 
 linux: directories $(BINDIR)/out-linux
 
