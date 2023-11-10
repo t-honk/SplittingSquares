@@ -9,29 +9,33 @@ Builds for both Windows and Linux included in [Releases](https://github.com/t-ho
 Windows release includes compiled binary and SDL2.dll and should work out of the box
 
 ### Linux
-Only compiled binary, SDL2 can be installed with package manager
+Only compiled binary, SDL2/SDL2_ttf can be installed with package manager
 
 ## Building
 
-**SDL2 development headers required to build**
+**SDL2 / SDL2_ttf development headers required to build**
 
 Install varies by system
 - Windows using MinGW:
     ```bash
     pacman -S mingw-w64-x86_64-SDL2
+    pacman -S mingw-w64-x86_64-SDL2_ttf
     ```
 - Linux:
   - pacman:
     ```sh
     pacman -S SDL2
+    pacman -S sdl2_ttf
     ```
   - apt:
     ```sh
     apt-get install libsdl2-dev
+    apt-get install libsdl2-ttf-dev
     ```
   - dnf:
     ```sh
     dnf install SDL2-devel
+    dnf install SDL2_ttf-devel
     ```
 
 Project includes a Makefile with build rules for both Windows (using mingw) and Linux systems.
@@ -42,14 +46,16 @@ or
 ```bash
 make linux
 ```
-Will build the correct binary for the platform in the "bin" folder.
+Will build the platform correct binary in the "bin" folder.
 
-Program Behavior can be modified using the consts in the top of "main.c" (explained below)
+Program Behavior can be modified using the constants in the top of "main.c" (explained below)
 
 ## Configuration Options
 
 - SCREEN_WIDTH
+  - Default: 1280 | Width of program window, does not have to be full screen size
 - SCREEN_HEIGHT
+  - Default: 720 | Height of program window, does not have to be full screen size
 - MAX_SQUARES
   - Default: 40,000 | Program exits, prints that MAX_SQUARES was reached ~~Currently crashes after this is exceeded [(TODO)](#TODO)~~
 - FPS
@@ -67,5 +73,5 @@ Program Behavior can be modified using the consts in the top of "main.c" (explai
 
 - MAYBE: 
   - Add UI elements for config (sliders?)
-  - Display FPS
-  - Display Square Count
+  - [x] ~~Display FPS~~
+  - [x] ~~Display Square Count~~

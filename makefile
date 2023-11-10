@@ -26,7 +26,7 @@ $(BINDIR)/SplittingSquares.exe: $(OBJECTS)
 
 linux: directories $(BINDIR)/SplittingSquares-linux
 
-$(BINDIR)/out-linux: $(OBJECTS)
+$(BINDIR)/SplittingSquares-linux: $(OBJECTS)
 	$(CC) -o $@ $^ -lSDL2 -lm
 
 clean:
