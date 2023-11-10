@@ -9,7 +9,7 @@
 
 const int SCREEN_WIDTH = 2560;
 const int SCREEN_HEIGHT = 1440;
-const int MAX_SQUARES = 40000;
+const int MAX_SQUARES = 1000;
 const int FPS = 144;
 const float ANGLE_INCREMENT = 10.0f;
 const float SHRINK_MODIFIER = 0.65f;
@@ -112,6 +112,11 @@ int main(int argc, char *args[])
             float angle = 0.0f;
             while (!quit)
             {
+                if (squareCount >= MAX_SQUARES)
+                {
+                    printf("MAX SQUARES REACHED. EXITING\n");
+                    return 0;
+                }
                 while (SDL_PollEvent(&e))
                 {
                     if (e.type == SDL_QUIT)
